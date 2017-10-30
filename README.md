@@ -1,54 +1,47 @@
-Welcome to the AWS CodeStar sample Alexa Skill
-==============================================
+# Build An Alexa Decision Tree Skill
+<img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/quiz-game/header._TTH_.png" />
 
-This sample code helps get you started with a simple skill built with the
-Amazon Alexa Skills Kit and deployed by AWS CloudFormation to AWS Lambda.
-This skill enables you to create a fact skill using facts about space. 
+[![Voice User Interface](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-off._TTH_.png)](https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/1-voice-user-interface.md)[![Lambda Function](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-off._TTH_.png)](https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/2-lambda-function.md)[![Connect VUI to Code](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-off._TTH_.png)](https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/3-connect-vui-to-code.md)[![Testing](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-off._TTH_.png)](https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/4-testing.md)[![Customization](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-off._TTH_.png)](https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/5-customization.md)[![Publication](https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/6-off._TTH_.png)](https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/6-publication.md)
 
-https://github.com/alexa/skill-sample-nodejs-fact
+<!--<a href="https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/1-voice-user-interface.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/1-off._TTH_.png" /></a><a href="https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/2-lambda-function.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/2-off._TTH_.png" /></a><a href="https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/3-connect-vui-to-code.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/3-off._TTH_.png" /></a><a href="https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/4-testing.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/4-off._TTH_.png" /></a><a href="https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/5-customization.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/5-off._TTH_.png" /></a><a href="https://github.com/Alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/6-publication.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/navigation/6-off._TTH_.png" /></a>-->
 
-What's Here
------------
+## What You Will Learn
+*  [AWS Lambda](http://aws.amazon.com/lambda)
+*  [Alexa Skills Kit (ASK)](https://developer.amazon.com/alexa-skills-kit)
+*  Voice User Interface (VUI) Design
+*  Skill Certification
+*  Reprompts
+*  State Management
+*  A Simple Binary ("Yes" or "No") Decision Tree Algorithm Implementation
 
-This sample includes:
+## What You Will Need
+*  [Amazon Developer Portal Account](http://developer.amazon.com)
+*  [Amazon Web Services Account](http://aws.amazon.com/)
+*  The sample code provided in this repository.
+*  A series of yes or no questions to ask your users and results based on their answers. Good types of question and answers for this could be:
+   *  Magazine style quizzes like "What kind of job is good for me?", or "Which superhero personality type am I?"
+   *  Suggestion and Reccommendation based skills like "Where cuisine should I eat today?", or "What genre of movie should I watch?"
 
-* README.md - this file
-* buildspec.yml - This YAML file is used by AWS CodeBuild to create an artifact
-  that can be used to deploy to AWS Lambda through CloudFormation.
-* index.js - This file contains the AWS Lambda code used to interact with Alexa.
-* package.json - This file is used by NPM to package your Alexa skill.
-* template.yml - This YAML file is used by AWS CloudFormation to update AWS Lambda
-  and manage any additional AWS resources.
+## What Your Skill Will Do
 
-Getting Started
----------------
+We make choices every day. We choose what to wear, where to go for dinner, which route to take to work or school. Decision making is a vital and regular part of our livelihood.
 
-To work on the sample code, you'll need to clone your project's repository to your
-local computer. If you haven't, do that first. You can find instructions in the
-AWS CodeStar user guide.
+Sometimes we're faced with so many choices, that arriving at a conclusive decision can be difficult. Decision trees can help simplify this for us.
 
-Once you've created your project in AWS CodeStar, go to the Amazon Alexa Portal
-and set up your skill to view it in action. Follow the tutorial provided on GitHub:
+Decision trees are a model that provide a structured process to chart out a course of action or arrive at a generalized conclusion, based on specific facts. Inherent in their name, decision trees are visualized as a tree like structure illuminating possible outcomes down a series of branches.
 
-https://github.com/alexa/skill-sample-nodejs-fact
+To learn more about decision trees, a good place to start would be <a href="https://en.wikipedia.org/wiki/Decision_tree" target="_blank">the wikipedia page for Decision Trees</a>.
 
-Since AWS CodeStar will create your AWS Lambda on your behalf, you can skip Step
-2 of the tutorial. In Step 3, you can use the Project view in AWS CodeStar to
-easily get the ARN of your AWS Lambda. Look for AWS Lambda under Type in the
-Project Resources table.
+Decision trees can form the basis of many different kinds of Alexa skills. In a turn based adventure game, presenting a user with a choice can progress a narrative. Additionally, decision trees can be utilized to recommend, or suggest a course of action (i.e. "What movie should I watch?").
 
+In this sample skill, we'll explore how a decision tree can be implemented. Alexa will provide an ideal career by asking a series of questions and giving you an answer. Alexa will ask questions such as:
+*   "Do you like working with people?"
+*   "Do you like caring for others?"
+*   "Would you like to work during the day?"
 
-What Do I Do Next?
-------------------
+The response to each question will procedurally progress the user through the nodes (branches) in the decision tree. Alexa will continue asking more questions until a final decision node is reached, at which point she will suggest an ideal career for you!
 
-Once you've tested your AWS Lambda function from the Amazon Developer Portal, we suggest
-making a small change to index.js so you can see how changes pushed to your repository are
-automatically picked up by your project pipeline and deployed to AWS Lambda. Once you've
-seen how that works, start developing your own code, and have fun!
+<a href="https://github.com/alexa/skill-sample-nodejs-decision-tree/blob/master/instructions/1-voice-user-interface.md"><img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/general/buttons/button_get_started._TTH_.png" /></a>
 
-Learn more about AWS CodeStar by reading the user guide. Ask questions or make
-suggestions on our forum.
-
-User Guide: http://docs.aws.amazon.com/codestar/latest/userguide/welcome.html
-
-Forum: https://forums.aws.amazon.com/forum.jspa?forumID=248
+<img height="1" width="1" src="https://www.facebook.com/tr?id=1847448698846169&ev=PageView&noscript=1"/>
+# decision
